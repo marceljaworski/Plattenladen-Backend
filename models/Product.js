@@ -26,4 +26,4 @@ export const getAll = async () => {
     return products;
 };
 
-export default User;
+export default Product;
