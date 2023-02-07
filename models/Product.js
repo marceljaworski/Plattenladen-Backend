@@ -1,29 +1,22 @@
 import mongoose from "mongoose";
 
 const productSchema = mongoose.Schema({
-    email: {
+    title: {
         type: String,
-        unique: true,
-        validate: {
-            validator: (v) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v),
-            message: "Please enter a valid email address"
-        }
     },
-    password: String,
-    // address:{
-    //     street: String,
-    //     houseNumber: {
-    //         type: String,
-    //         validate: {
-    //             validator: (v) => /^[0-9].*$/.test(v),
-    //             message: "Please insert some kind of number as House number"
-    //         }
-    //     },
-    //     zipCode: String,
-    //     city: String,
-    //     country: String,
-            
-    // },
+    artist: {
+        type: String,
+    },
+    year: {
+        type: Number,
+    },
+    picture: {
+        type: URL,
+    },
+    price: {
+        type: String,
+    },
+   
     
 },{versionKey: false})
 const Product = mongoose.model("Product", productSchema);
