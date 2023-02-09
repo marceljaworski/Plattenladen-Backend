@@ -2,13 +2,16 @@ import { faker } from "@faker-js/faker";
 import Product from "./models/Product.js";
 import "./lib/mongoose.js";
 import { argv } from "process";
-
+const deleteProducts = async () => {
+    console.log("deleting all photos")
+    return await Product.deleteMany();
+};
 const createProduct = async () => {
     const product = new Product({
-        title: faker.title(),
+        title: faker.animal.insect(),
         artist: faker.name.fullName(),
-        year: faker.year(),
-        picture: faker.imageUrl(1234, 2345),
+        year: faker.date.between(),
+        picture: faker.image.imageUrl(1234, 2345),
         price: faker.commerce.price()
        
     });

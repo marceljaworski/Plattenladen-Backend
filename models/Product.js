@@ -17,7 +17,7 @@ const productSchema = mongoose.Schema({
         type: String,
     },
    
-    
+ 
 },{versionKey: false})
 const Product = mongoose.model("Product", productSchema);
 
