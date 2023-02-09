@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
-import apiRoutes from "./routes/api.js"
 import logMiddleware from "./middlewares/log.js";
+import apiRoutes from "./routes/api.js"
 
 import "./lib/mongoose.js";
-const app = express();
 
-app.use(logMiddleware);
+const app = express();
 app.use(express.json());
+app.use(logMiddleware);
 
 const port = process.env.PORT || 4003;
 app.listen(port, () => console.log(`listening on port ${port}`));
