@@ -23,7 +23,19 @@ const Product = mongoose.model("Product", productSchema);
 
 export const getAll = async () => {
     const products = await Product.find();
-    return products;
+    return products.map( product => {
+        const { _id, ...details } = product._doc;
+        return {
+            id:product._id,
+            ...details
+        };
+    })
+};
+export const create = async (document) => {    
+    const newProduct = new Product(document);
+    const result = await newProduct.save();
+    return result;
+    
 };
 
 export default Product;

@@ -8,3 +8,14 @@ export const getAll = async (req, res, next) => {
         next(error);
     };
 };
+
+export const create = async (req, res, next) => {
+    try {
+        const result = await Product.create({title: req.body.title, artist: req.body.artist, picture: req.body.image, year: req.body.year, price: req.body.price});
+     
+        res.status(201).json(result);
+    } catch(error) {
+        next(error);
+    };
+  
+};
