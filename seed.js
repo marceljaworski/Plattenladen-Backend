@@ -11,7 +11,7 @@ const createProduct = async () => {
         title: faker.animal.insect(),
         artist: faker.name.fullName(),
         year: faker.date.between(),
-        picture: faker.image.imageUrl(1234, 2345),
+        picture: faker.image.abstract(1234, 2345, true),
         price: faker.commerce.price()
        
     });
