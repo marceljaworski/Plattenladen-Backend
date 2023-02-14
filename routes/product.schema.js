@@ -17,6 +17,7 @@ export const postProductSchema = {
         },
         picture: {
             type: "string",
+            format: "url"
         },
         price: {
             type: "string",
