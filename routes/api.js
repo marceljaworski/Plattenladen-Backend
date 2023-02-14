@@ -9,6 +9,7 @@ const apiRoutes = Router();
 
 apiRoutes.get("/products", validate(productSchema), product.getAll);
 apiRoutes.post("/products",validate(postProductSchema), product.create);
+apiRoutes.put("/products/:id", product.replace);
 apiRoutes.post("auth/register", validate(postUser), user.create);
 apiRoutes.post("auth/login", user.login);
 

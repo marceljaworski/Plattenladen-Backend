@@ -37,5 +37,9 @@ export const create = async (document) => {
     return result;
     
 };
+export const replace = async (id, data) => {
+    const result = await Product.findOneAndReplace({_id: id}, data, {returnDocument: "after", runValidators: true},);
 
+    return result;
+};
 export default Product;
