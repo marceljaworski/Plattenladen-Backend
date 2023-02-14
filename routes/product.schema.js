@@ -13,7 +13,7 @@ export const postProductSchema = {
             type: "string",
         },
         year: {
-            type: "number",
+            type: "string",
         },
         picture: {
             type: "string",
