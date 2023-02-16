@@ -21,7 +21,7 @@ const User = mongoose.model("User", userSchema);
 export const create = async (document) => {    
     const newUser = new User(document);
     const result = await newUser.save();
-    return result;
+    return result._doc;
     
 };
 // export const getOne = async (filter) => {
