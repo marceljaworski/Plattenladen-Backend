@@ -13,14 +13,14 @@ export const postProductSchema = {
             type: "string",
         },
         year: {
-            type: "string",
+            type: "number",
         },
         picture: {
             type: "string",
             format: "url"
         },
         price: {
-            type: "string",
+            type: "number",
         }
     }
 };
