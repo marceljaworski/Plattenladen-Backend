@@ -14,7 +14,7 @@ const productSchema = mongoose.Schema({
         type: String,
     },
     price: {
-        type: String,
+        type: Number,
     },
    
  
@@ -30,6 +30,28 @@ export const getAll = async () => {
             ...details
         };
     })
+};
+export const getAllSearched = async (search) => {
+    
+    const result = await Product.find({
+        $or: [
+            {
+                title: { 
+                    $regex: '.*' + search + '.*',
+                    $options: 'i' 
+                }
+            }, 
+            {
+                artist: { 
+                    $regex: '.*' + search + '.*',
+                    $options: 'i' 
+                }
+            }
+        ]
+    });
+    return result;
+
+    
 };
 export const create = async (document) => {    
     const newProduct = new Product(document);

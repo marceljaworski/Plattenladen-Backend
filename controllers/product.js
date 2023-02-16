@@ -1,9 +1,15 @@
 import * as Product from "../models/Product.js";
 
+
 export const getAll = async (req, res, next) => {
     try {
-        const result = await Product.getAll();
-        res.status(200).json(result);
+        if(req.query.search){
+            res.status(200).send(await Product.getAllSearched(req.query.search));
+        }else{
+            const result = await Product.getAll();
+            res.status(200).json(result);
+        }
+        
     } catch (error) {
         next(error);
     };

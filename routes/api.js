@@ -8,6 +8,7 @@ import { productSchema, postProductSchema } from "./product.schema.js";
 const apiRoutes = Router();
 
 apiRoutes.get("/products", validate(productSchema), product.getAll);
+
 apiRoutes.post("/products",validate(postProductSchema), product.create);
 apiRoutes.put("/products/:id", product.replace);
 apiRoutes.post("/login", validate(postUser), user.create);
