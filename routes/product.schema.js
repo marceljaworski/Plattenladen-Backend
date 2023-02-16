@@ -1,6 +1,6 @@
 export const productSchema = {
     type: "object",
-    additionalProperties: false,
+    additionalProperties: true,
 };
 export const postProductSchema = {
     type: "object",
